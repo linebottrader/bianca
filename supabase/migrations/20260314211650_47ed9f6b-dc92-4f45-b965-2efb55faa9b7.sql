@@ -1,0 +1,1 @@
+ALTER TABLE categories ADD COLUMN disponivel boolean NOT NULL DEFAULT true;

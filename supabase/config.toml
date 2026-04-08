@@ -1,0 +1,34 @@
+project_id = "smgrzdhycgcbtcdkpqdl"
+
+[functions.setup-first-admin]
+verify_jwt = false
+
+[functions.calcular-frete]
+verify_jwt = false
+
+[functions.mp-create-preference]
+verify_jwt = false
+
+[functions.mp-webhook]
+verify_jwt = false
+
+[functions.mp-check-status]
+verify_jwt = false
+
+[functions.create-admin-user]
+verify_jwt = false
+
+[functions.list-admin-users]
+verify_jwt = false
+
+[functions.reset-password-request]
+verify_jwt = false
+
+[functions.reset-password-confirm]
+verify_jwt = false
+
+[functions.test-smtp]
+verify_jwt = false
+
+[functions.create-customer]
+verify_jwt = false

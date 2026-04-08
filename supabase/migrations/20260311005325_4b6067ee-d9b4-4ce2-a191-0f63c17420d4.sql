@@ -1,0 +1,2 @@
+ALTER TABLE public.pedidos DROP CONSTRAINT pedidos_forma_pagamento_check;
+ALTER TABLE public.pedidos ADD CONSTRAINT pedidos_forma_pagamento_check CHECK (forma_pagamento = ANY (ARRAY['PIX'::text, 'CARTÃO'::text, 'MERCADO_PAGO'::text]));
