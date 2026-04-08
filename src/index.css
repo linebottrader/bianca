@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 10% 96%;
+    --foreground: 20 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 15% 15%;
+
+    --primary: 25 95% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 20 10% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 30 10% 92%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 45 100% 51%;
+    --accent-foreground: 20 15% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 10% 88%;
+    --input: 30 10% 88%;
+    --ring: 25 95% 50%;
+
+    --radius: 0.75rem;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --badge-promo: 0 84% 55%;
+    --badge-new: 200 90% 50%;
+    --badge-best: 142 71% 45%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    /* Dynamic design tokens (defaults) */
+    --d-bg-body: #f5f0eb;
+    --d-bg-container: #ffffff;
+    --d-color-primary: #f07c00;
+    --d-color-secondary: #2e2e2e;
+    --d-color-text-main: #2a2118;
+    --d-color-text-light: #8a7e73;
+    --d-header-bg: #2e2e2e;
+    --d-header-text: #fafafa;
+    --d-header-badge-bg: #f07c00;
+    --d-header-badge-text: #ffffff;
+    --d-banner-overlay: rgba(46,46,46,0.5);
+    --d-banner-button-bg: #f07c00;
+    --d-banner-button-text: #ffffff;
+    --d-banner-title-color: #ffffff;
+    --d-category-bg: #ebe7e2;
+    --d-category-text: #8a7e73;
+    --d-category-active-bg: #2e2e2e;
+    --d-category-active-text: #fafafa;
+    --d-category-radius: 0.5rem;
+    --d-card-bg: #ffffff;
+    --d-card-title-color: #2a2118;
+    --d-card-desc-color: #8a7e73;
+    --d-price-color: #f07c00;
+    --d-badge-bg: #e84c3d;
+    --d-badge-text: #ffffff;
+    --d-btn-primary-bg: #f07c00;
+    --d-btn-primary-text: #ffffff;
+    --d-btn-secondary-bg: #2e2e2e;
+    --d-btn-secondary-text: #fafafa;
+    --d-btn-radius: 0.75rem;
+    --d-cart-bg: #ffffff;
+    --d-cart-title-color: #2a2118;
+    --d-cart-border-color: #e5e0db;
+    --d-font-family: 'Open Sans', sans-serif;
+    --d-title-size: 1.25rem;
+    --d-text-size: 0.875rem;
+    --d-card-radius: 0.75rem;
+    --d-card-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --d-container-width: 1280px;
+    --d-bg-image: none;
+    --d-product-img-width: 96px;
+    --d-product-img-height: 96px;
+    --d-product-img-radius: 8px;
+    --d-product-img-hover-zoom: false;
+  }
+
+  .dark {
+    --background: 20 15% 8%;
+    --foreground: 30 10% 96%;
+    --card: 20 15% 12%;
+    --card-foreground: 30 10% 96%;
+    --popover: 20 15% 12%;
+    --popover-foreground: 30 10% 96%;
+    --primary: 25 95% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 10% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 20 10% 18%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 20 15% 15%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 10% 22%;
+    --input: 20 10% 22%;
+    --ring: 25 95% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* New order pulse animation */
+@keyframes novo-pedido-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--success) / 0.7); }
+  50% { box-shadow: 0 0 0 8px hsl(var(--success) / 0); }
+}
+
+.animate-novo-pedido {
+  animation: novo-pedido-pulse 1.5s ease-in-out 5;
+}
+
+/* Product image responsive constraint */
+@media (max-width: 640px) {
+  .product-img-container {
+    max-width: 120px !important;
+    max-height: 120px !important;
+  }
+}
+
+/* Product image hover zoom (only when enabled via CSS var) */
+.group:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* When hover zoom is disabled, override */
+:root[style*="--d-product-img-hover-zoom: false"] .group:hover .product-img {
+  transform: none;
+}
+
+/* Premium section cards responsive */
+@media (max-width: 1024px) {
+  .snap-start[style*="width: calc(25%"] {
+    width: calc(33.333% - 8px) !important;
+  }
+}
+@media (max-width: 640px) {
+  .snap-start[style*="width: calc(25%"],
+  .snap-start[style*="width: calc(33"] {
+    width: calc(50% - 6px) !important;
+    min-width: 140px !important;
+  }
+}
+
+/* ── Realtime animation classes ── */
+@keyframes rt-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rt-highlight {
+  0% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.5); }
+  50% { box-shadow: 0 0 0 4px hsl(var(--primary) / 0.25); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+}
+@keyframes rt-fade-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.95); }
+}
+.rt-fade-in {
+  animation: rt-fade-in 0.35s ease-out both;
+}
+.rt-highlight {
+  animation: rt-highlight 0.8s ease-out;
+}
+.rt-fade-out {
+  animation: rt-fade-out 0.3s ease-in both;
+}
